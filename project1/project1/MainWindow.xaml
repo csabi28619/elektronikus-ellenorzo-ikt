@@ -1,0 +1,311 @@
+﻿<Window x:Class="project1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Elektronikus Ellenőrző Rendszer" Height="700" Width="1200"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl>
+            <!-- Tanulók kezelése -->
+            <TabItem Header="Tanulók">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Header="Új tanuló felvétele" Grid.Row="0" Margin="0,0,0,10">
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" Margin="5">
+                                <TextBlock Text="Név:"/>
+                                <TextBox x:Name="txtNev" Margin="0,3,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
+                                <TextBlock Text="Születési hely:"/>
+                                <TextBox x:Name="txtSzulHely" Margin="0,3,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
+                                <TextBlock Text="Születési idő:"/>
+                                <DatePicker x:Name="dpSzulIdo" Margin="0,3,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
+                                <TextBlock Text="Anyja neve:"/>
+                                <TextBox x:Name="txtAnyja" Margin="0,3,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Grid.Column="0" Margin="5">
+                                <TextBlock Text="Lakcím:"/>
+                                <TextBox x:Name="txtLakcim" Margin="0,3,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Grid.Column="1" Margin="5">
+                                <TextBlock Text="Beiratkozás időpontja:"/>
+                                <DatePicker x:Name="dpBeiratkozas" Margin="0,3,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="3" Grid.Column="0" Margin="5">
+                                <TextBlock Text="Szak:"/>
+                                <ComboBox x:Name="cmbSzak" Margin="0,3,0,0">
+                                    <ComboBoxItem Content="Informatika"/>
+                                    <ComboBoxItem Content="Gazdálkodás"/>
+                                    <ComboBoxItem Content="Építőipar"/>
+                                    <ComboBoxItem Content="Kereskedelem"/>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="3" Grid.Column="1" Margin="5">
+                                <TextBlock Text="Osztály:"/>
+                                <ComboBox x:Name="cmbOsztaly" Margin="0,3,0,0">
+                                    <ComboBoxItem Content="9.A"/>
+                                    <ComboBoxItem Content="9.B"/>
+                                    <ComboBoxItem Content="10.A"/>
+                                    <ComboBoxItem Content="10.B"/>
+                                    <ComboBoxItem Content="11.A"/>
+                                    <ComboBoxItem Content="11.B"/>
+                                    <ComboBoxItem Content="12.A"/>
+                                    <ComboBoxItem Content="12.B"/>
+                                    <ComboBoxItem Content="13.A"/>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="4" Grid.Column="0" Margin="5">
+                                <CheckBox x:Name="chkKollegista" Content="Kollégista?" Margin="0,10,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="4" Grid.Column="1" Margin="5">
+                                <TextBlock Text="Kollégium:"/>
+                                <ComboBox x:Name="cmbKollegium" Margin="0,3,0,0" IsEnabled="False">
+                                    <ComboBoxItem Content="Kossuth Kollégium"/>
+                                    <ComboBoxItem Content="Bethlen Kollégium"/>
+                                    <ComboBoxItem Content="Petőfi Kollégium"/>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" 
+                                    Content="Tanuló mentése" Margin="5,10,5,0" 
+                                    Padding="10,5" Click="BtnMentTanulo_Click"
+                                    Background="#FF4CAF50" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <DataGrid x:Name="dgTanulok" Grid.Row="1" AutoGenerateColumns="False" 
+                              IsReadOnly="True" Margin="0,0,0,10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Napló szám" Binding="{Binding NaploSzam}" Width="80"/>
+                            <DataGridTextColumn Header="Törzslap szám" Binding="{Binding TorzslapSzam}" Width="100"/>
+                            <DataGridTextColumn Header="Név" Binding="{Binding Nev}" Width="150"/>
+                            <DataGridTextColumn Header="Osztály" Binding="{Binding Osztaly}" Width="70"/>
+                            <DataGridTextColumn Header="Szak" Binding="{Binding Szak}" Width="120"/>
+                            <DataGridTextColumn Header="Születési hely" Binding="{Binding SzuletesiHely}" Width="120"/>
+                            <DataGridTextColumn Header="Születési idő" Binding="{Binding SzuletesiIdo}" Width="100"/>
+                            <DataGridTextColumn Header="Kollégista" Binding="{Binding KollegistaStr}" Width="80"/>
+                            <DataGridTemplateColumn Header="Műveletek" Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Törlés" Click="BtnTorolTanulo_Click" 
+                                                Background="#FFF44336" Foreground="White" Padding="5,2"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <Button Content="Admin nézet - Statisztika" Click="BtnTanuloStatisztika_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FF2196F3" Foreground="White"/>
+                        <Button Content="Tanulók betöltése" Click="BtnBetoltTanulok_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FF607D8B" Foreground="White"/>
+                        <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0"/>
+                        <Button Content="Import CSV" Click="BtnImportTanuloCSV_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FFFF5722" Foreground="White"/>
+                        <Button Content="Import JSON" Click="BtnImportTanuloJSON_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FFFF5722" Foreground="White"/>
+                        <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0"/>
+                        <Button Content="Export CSV" Click="BtnExportTanuloCSV_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FF009688" Foreground="White"/>
+                        <Button Content="Export JSON" Click="BtnExportTanuloJSON_Click"
+                                Padding="10,5" Background="#FF009688" Foreground="White"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Tantárgyak kezelése -->
+            <TabItem Header="Tantárgyak">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Header="Új tantárgy felvétele" Grid.Row="0" Margin="0,0,0,10">
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" Margin="5">
+                                <TextBlock Text="Tantárgy neve:"/>
+                                <TextBox x:Name="txtTargyNev" Margin="0,3,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
+                                <TextBlock Text="Évfolyam:"/>
+                                <ComboBox x:Name="cmbEvfolyam" Margin="0,3,0,0">
+                                    <ComboBoxItem Content="9"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
+                                <TextBlock Text="Típus:"/>
+                                <ComboBox x:Name="cmbTargyTipus" Margin="0,3,0,0">
+                                    <ComboBoxItem Content="Közismereti"/>
+                                    <ComboBoxItem Content="Szakmai"/>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
+                                <TextBlock Text="Heti óraszám:"/>
+                                <TextBox x:Name="txtHetiOra" Margin="0,3,0,0"/>
+                            </StackPanel>
+
+                            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                                    Content="Tantárgy mentése" Margin="5,10,5,0" 
+                                    Padding="10,5" Click="BtnMentTargy_Click"
+                                    Background="#FF4CAF50" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <DataGrid x:Name="dgTargyak" Grid.Row="1" AutoGenerateColumns="False" 
+                              IsReadOnly="True" Margin="0,0,0,10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tantárgy neve" Binding="{Binding Nev}" Width="200"/>
+                            <DataGridTextColumn Header="Évfolyam" Binding="{Binding Evfolyam}" Width="80"/>
+                            <DataGridTextColumn Header="Típus" Binding="{Binding Tipus}" Width="120"/>
+                            <DataGridTextColumn Header="Heti óra" Binding="{Binding HetiOra}" Width="80"/>
+                            <DataGridTextColumn Header="Éves óra" Binding="{Binding EvesOra}" Width="80"/>
+                            <DataGridTemplateColumn Header="Műveletek" Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Törlés" Click="BtnTorolTargy_Click" 
+                                                Background="#FFF44336" Foreground="White" Padding="5,2"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <Button Content="Admin nézet - Statisztika" Click="BtnTargyStatisztika_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FF2196F3" Foreground="White"/>
+                        <Button Content="Tantárgyak betöltése" Click="BtnBetoltTargyak_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FF607D8B" Foreground="White"/>
+                        <Button Content="Tantárgyak hozzárendelése" Click="BtnTargyHozzarendeles_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FFFF9800" Foreground="White"/>
+                        <Button Content="Exportálás CSV-be" Click="BtnExportTargyCSV_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FF009688" Foreground="White"/>
+                        <Button Content="Exportálás JSON-be" Click="BtnExportTargyJSON_Click"
+                                Padding="10,5" Background="#FF009688" Foreground="White"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Jegyek kezelése -->
+            <TabItem Header="Jegyek">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Header="Tanuló kiválasztása" Grid.Row="0" Margin="0,0,0,10">
+                        <StackPanel Margin="10">
+                            <TextBlock Text="Válassz tanulót:"/>
+                            <ComboBox x:Name="cmbTanulokJegy" Margin="0,5,0,10" 
+                                      SelectionChanged="CmbTanulokJegy_SelectionChanged"/>
+
+                            <StackPanel x:Name="pnlJegyBevitel" Visibility="Collapsed">
+                                <Separator Margin="0,10"/>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                                        <TextBlock Text="Tantárgy:"/>
+                                        <ComboBox x:Name="cmbTargyakJegy" Margin="0,3,0,10"/>
+
+                                        <TextBlock Text="Jegy (1-5):"/>
+                                        <TextBox x:Name="txtJegy" Margin="0,3,0,10"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock Text="Téma:"/>
+                                        <TextBox x:Name="txtTema" Margin="0,3,0,10"/>
+
+                                        <TextBlock Text="Számonkérés típusa:"/>
+                                        <ComboBox x:Name="cmbSzamonkeres" Margin="0,3,0,10">
+                                            <ComboBoxItem Content="Szóbeli felelet"/>
+                                            <ComboBoxItem Content="Írásbeli dolgozat"/>
+                                            <ComboBoxItem Content="Gyakorlati feladat"/>
+                                            <ComboBoxItem Content="Projektmunka"/>
+                                            <ComboBoxItem Content="Házi feladat"/>
+                                        </ComboBox>
+                                    </StackPanel>
+                                </Grid>
+
+                                <Button Content="Jegy mentése" Click="BtnMentJegy_Click"
+                                        Padding="10,5" Margin="0,5,0,0"
+                                        Background="#FF4CAF50" Foreground="White" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="pnlTanuloDashboard" Margin="0,0,0,10"/>
+                    </ScrollViewer>
+
+                    <Button Grid.Row="2" Content="Admin nézet - Összesítés" 
+                            Click="BtnJegyStatisztika_Click"
+                            Padding="10,5" Margin="0,0,10,0" Background="#FF2196F3" Foreground="White" HorizontalAlignment="Left"/>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="Exportálás CSV-be" Click="BtnExportJegyCSV_Click"
+                                Padding="10,5" Margin="0,0,10,0" Background="#FF009688" Foreground="White"/>
+                        <Button Content="Exportálás JSON-be" Click="BtnExportJegyJSON_Click"
+                                Padding="10,5" Background="#FF009688" Foreground="White"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
