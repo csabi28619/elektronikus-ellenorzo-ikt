@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "c565d250-13a6-4416-b709-8b513965d582",
+    "TanuloId": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "TargyId": "01fbcc8a-3c04-49e2-8757-5bc67b310519",
+    "JegyErtek": 1,
+    "Tema": "radioaktivit\u00E1s",
+    "SzamonkeresTipus": "H\u00E1zi feladat",
+    "Datum": "2025-11-05T18:17:02.9612616+01:00"
+  },
+  {
+    "Id": "01afa748-04cc-4453-8e35-4bc81f0d1773",
+    "TanuloId": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "TargyId": "57d86573-a9c6-4bee-a2b2-d20c41851fe1",
+    "JegyErtek": 5,
+    "Tema": "\u00F3rai munka el\u00E9gtelen",
+    "SzamonkeresTipus": "Gyakorlati feladat",
+    "Datum": "2025-11-05T18:17:25.5384038+01:00"
+  },
+  {
+    "Id": "7ea889b9-c31f-46b4-bb45-605416693104",
+    "TanuloId": "48310d26-d0e2-4985-b043-85be1f9fc194",
+    "TargyId": "57d86573-a9c6-4bee-a2b2-d20c41851fe1",
+    "JegyErtek": 5,
+    "Tema": "Alkoholizmus",
+    "SzamonkeresTipus": "Sz\u00F3beli felelet",
+    "Datum": "2025-11-05T18:18:07.1926275+01:00"
+  },
+  {
+    "Id": "2fa72d54-877d-48fd-8799-414bdeb2114b",
+    "TanuloId": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "TargyId": "57d86573-a9c6-4bee-a2b2-d20c41851fe1",
+    "JegyErtek": 1,
+    "Tema": "alma",
+    "SzamonkeresTipus": "Sz\u00F3beli felelet",
+    "Datum": "2025-11-05T18:18:42.2824938+01:00"
+  },
+  {
+    "Id": "5e67ab60-2a56-4647-9cf0-60fb212b5912",
+    "TanuloId": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "TargyId": "57d86573-a9c6-4bee-a2b2-d20c41851fe1",
+    "JegyErtek": 1,
+    "Tema": "j\u00F3 kisfi\u00FA",
+    "SzamonkeresTipus": "Projektmunka",
+    "Datum": "2025-11-05T18:18:57.6648615+01:00"
+  },
+  {
+    "Id": "a9d77b1c-41f9-4913-a218-4e477ba17f27",
+    "TanuloId": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "TargyId": "57d86573-a9c6-4bee-a2b2-d20c41851fe1",
+    "JegyErtek": 1,
+    "Tema": "1020",
+    "SzamonkeresTipus": "\u00CDr\u00E1sbeli dolgozat",
+    "Datum": "2025-11-05T18:19:09.23257+01:00"
+  },
+  {
+    "Id": "3db076db-9616-49aa-bdff-cf1712d695e7",
+    "TanuloId": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "TargyId": "57d86573-a9c6-4bee-a2b2-d20c41851fe1",
+    "JegyErtek": 1,
+    "Tema": "20",
+    "SzamonkeresTipus": "\u00CDr\u00E1sbeli dolgozat",
+    "Datum": "2025-11-05T18:19:17.4734945+01:00"
+  },
+  {
+    "Id": "09029c7f-cab7-4100-8b19-79b87108dbd6",
+    "TanuloId": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "TargyId": "01fbcc8a-3c04-49e2-8757-5bc67b310519",
+    "JegyErtek": 5,
+    "Tema": "12",
+    "SzamonkeresTipus": "\u00CDr\u00E1sbeli dolgozat",
+    "Datum": "2025-11-05T18:19:27.4187907+01:00"
+  }
+]

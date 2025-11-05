@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "48310d26-d0e2-4985-b043-85be1f9fc194",
+    "Nev": "Szabad D\u00E1niel",
+    "SzuletesiHely": "Debrecen",
+    "SzuletesiIdo": "2007-07-12T00:00:00",
+    "AnyjaNeve": "igen",
+    "Lakcim": "N\u00E1dudvar",
+    "BeiratkozasIdeje": "2022-07-22T00:00:00",
+    "Szak": "Informatika",
+    "Osztaly": "12.B",
+    "Kollegista": false,
+    "Kollegium": "",
+    "NaploSzam": 1,
+    "TorzslapSzam": "1/2022",
+    "KollegistaStr": "Nem"
+  },
+  {
+    "Id": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "Nev": "Kis Pista",
+    "SzuletesiHely": "cig\u00E1nytelep",
+    "SzuletesiIdo": "2405-07-30T00:00:00",
+    "AnyjaNeve": "Lakatos HDMI k\u00E1bel",
+    "Lakcim": "Miskolc",
+    "BeiratkozasIdeje": "2025-06-03T00:00:00",
+    "Szak": "\u00C9p\u00EDt\u0151ipar",
+    "Osztaly": "9.A",
+    "Kollegista": false,
+    "Kollegium": "",
+    "NaploSzam": 1,
+    "TorzslapSzam": "1/2025",
+    "KollegistaStr": "Nem"
+  }
+]

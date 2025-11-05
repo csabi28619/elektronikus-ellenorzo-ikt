@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "57d86573-a9c6-4bee-a2b2-d20c41851fe1",
+    "Nev": "Fizika",
+    "Evfolyam": 12,
+    "Tipus": "K\u00F6zismereti",
+    "HetiOra": 1,
+    "EvesOra": 31
+  },
+  {
+    "Id": "01fbcc8a-3c04-49e2-8757-5bc67b310519",
+    "Nev": "irodalom",
+    "Evfolyam": 12,
+    "Tipus": "K\u00F6zismereti",
+    "HetiOra": 3,
+    "EvesOra": 93
+  }
+]

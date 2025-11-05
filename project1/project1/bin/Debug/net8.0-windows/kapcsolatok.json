@@ -1,0 +1,17 @@
+[
+  {
+    "Id": "105cab2b-ef59-49ab-a753-b4a736da01ef",
+    "TanuloId": "48310d26-d0e2-4985-b043-85be1f9fc194",
+    "TargyId": "57d86573-a9c6-4bee-a2b2-d20c41851fe1"
+  },
+  {
+    "Id": "1cd43a52-0a97-42b8-a178-94588446d81a",
+    "TanuloId": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "TargyId": "01fbcc8a-3c04-49e2-8757-5bc67b310519"
+  },
+  {
+    "Id": "47dfdac1-a506-4ac0-b759-5b5900daceb4",
+    "TanuloId": "d259ee70-f64a-4fea-ab7c-ddae685b27e6",
+    "TargyId": "57d86573-a9c6-4bee-a2b2-d20c41851fe1"
+  }
+]
